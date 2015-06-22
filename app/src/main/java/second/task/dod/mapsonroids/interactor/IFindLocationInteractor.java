@@ -1,11 +1,11 @@
-package second.task.dod.mapsonroids.model;
+package second.task.dod.mapsonroids.interactor;
 
 import android.content.Context;
 
 /**
  * Created by noiser on 19.06.15.
  */
-public interface FindLocationInteractor {
+public interface IFindLocationInteractor {
 
     void getCurrentLocation(Context context, OnLocationListener locationListener);
 }

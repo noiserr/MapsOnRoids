@@ -3,7 +3,7 @@ package second.task.dod.mapsonroids.service;
 import android.location.Location;
 import android.os.AsyncTask;
 
-import second.task.dod.mapsonroids.model.OnLocationListener;
+import second.task.dod.mapsonroids.interactor.OnLocationListener;
 
 /**
  * Created by noiser on 20.06.15.

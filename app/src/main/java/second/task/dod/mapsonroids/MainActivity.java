@@ -1,11 +1,9 @@
 package second.task.dod.mapsonroids;
 
-import android.location.Location;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,8 +20,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import second.task.dod.mapsonroids.adapter.PopupAdapter;
+import second.task.dod.mapsonroids.presenter.IMainPresenter;
 import second.task.dod.mapsonroids.presenter.MainPresenter;
-import second.task.dod.mapsonroids.presenter.MainPresenterImpl;
 import second.task.dod.mapsonroids.view.MainView;
 
 public class MainActivity extends AppCompatActivity implements MainView {
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     static final LatLng HAMBURG = new LatLng(53.558, 9.927);
     GoogleMap map;
     Marker marker = null;
-    private MainPresenter mainPresenter;
+    private IMainPresenter IMainPresenter;
 
 
     @Override
@@ -47,10 +45,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         ButterKnife.inject(this);
         setSupportActionBar(toolbar);
         setupMap();
-        mainPresenter = new MainPresenterImpl(getApplicationContext(), this);
-
-
-
+        IMainPresenter = new MainPresenter(getApplicationContext(), this);
 
     }
 
@@ -67,8 +62,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         map.clear();
         showProgressBar();
         gpsButton.setEnabled(false);
-        mainPresenter.getLocation();
-
+        IMainPresenter.getLocation();
     }
 
     @Override

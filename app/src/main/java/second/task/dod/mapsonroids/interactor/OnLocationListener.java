@@ -1,4 +1,4 @@
-package second.task.dod.mapsonroids.model;
+package second.task.dod.mapsonroids.interactor;
 
 import android.location.Location;
 

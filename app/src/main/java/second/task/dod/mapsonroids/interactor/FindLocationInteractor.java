@@ -1,4 +1,4 @@
-package second.task.dod.mapsonroids.model;
+package second.task.dod.mapsonroids.interactor;
 
 import android.content.Context;
 
@@ -9,7 +9,7 @@ import second.task.dod.mapsonroids.service.LocationAsyncTask;
 /**
  * Created by noiser on 19.06.15.
  */
-public class FindLocationInteractroImpl implements FindLocationInteractor {
+public class FindLocationInteractor implements IFindLocationInteractor {
 
 
     @Override
